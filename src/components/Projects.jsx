@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SmartGlasses from "./SmartGlasses";
 
 const GITHUB_USER = "samuel2l";
 const GITHUB_URL = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`;
@@ -153,6 +154,7 @@ function Projects() {
     return (
       <section id="projects" style={styles.section}>
         <h2 style={styles.title}>Projects</h2>
+        <SmartGlasses />
         <p style={styles.error}>
           {error}.{" "}
           <a href={`https://github.com/${GITHUB_USER}`}>
@@ -170,10 +172,15 @@ function Projects() {
         Projects
       </h2>
 
+      <SmartGlasses />
+
       {loading ? (
         <p style={styles.loading}>Loading projects…</p>
       ) : (
         <>
+          <h3 style={styles.subheading} className="stagger-item">
+            Open source on GitHub
+          </h3>
           <ul style={styles.list}>
             {projects.map((project) => (
               <li
@@ -230,6 +237,14 @@ const styles = {
     textTransform: "uppercase",
     letterSpacing: "0.1em",
     marginBottom: "1.5rem",
+  },
+  subheading: {
+    fontFamily: "var(--font-mono)",
+    fontSize: "0.75rem",
+    color: "var(--text-muted)",
+    textTransform: "uppercase",
+    letterSpacing: "0.08em",
+    margin: "0 0 1.25rem",
   },
   loading: {
     color: "var(--text-muted)",
