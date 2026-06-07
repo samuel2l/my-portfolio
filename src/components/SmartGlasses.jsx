@@ -4,8 +4,17 @@ const FEATURES = [
   "Note taking with recording and playback access",
   "Playback controls — pause, speed up, slow down, rewind, and fast-forward",
   "Image and video recognition",
+  "Gesture detection",
   "Math recognition",
   "Table extraction and parsing",
+];
+
+const DOMAINS = [
+  "Embedded systems",
+  "Hardware & software",
+  "Computer vision",
+  "Algorithms",
+  "Machine learning",
 ];
 
 const IMAGES = [
@@ -19,6 +28,11 @@ const IMAGES = [
     alt: "3D-printed smart glasses prototype with Raspberry Pi 5 and camera mounted on the frame",
     caption: "First physical prototype — 3D printed and assembled",
   },
+  {
+    src: "/projects/smart-glasses/lab-prototype.png",
+    alt: "Close-up of the smart glasses prototype on a lab bench with Raspberry Pi, camera module, and test equipment",
+    caption: "Lab bench — Raspberry Pi, camera module, and electronics integration",
+  },
 ];
 
 function SmartGlasses() {
@@ -27,17 +41,28 @@ function SmartGlasses() {
       <div style={styles.header}>
         <div>
           <h3 style={styles.name}>Smart Glasses</h3>
-          <p style={styles.subtitle}>Wearable AI · Hardware + Computer Vision</p>
+          <p style={styles.subtitle}>
+            Embedded systems · Computer vision · Machine learning
+          </p>
         </div>
         <span style={styles.badge}>Private project</span>
       </div>
 
+      <div style={styles.domains}>
+        {DOMAINS.map((domain) => (
+          <span key={domain} style={styles.domainTag} className="skill-tag">
+            {domain}
+          </span>
+        ))}
+      </div>
+
       <p style={styles.overview}>
-        A pair of AI-powered smart glasses that bring a personal assistant to
-        your field of view. The system captures what you see through a
-        front-mounted camera and runs on-device intelligence for OCR, math
-        recognition, table parsing, and image and video understanding — plus
-        full note-taking with rich playback controls.
+        A cross-disciplinary wearable that combines custom embedded hardware
+        with on-device software — computer vision, algorithms, and machine
+        learning working together on a pair of AI-powered smart glasses. A
+        front-mounted camera feeds the system for OCR, gesture detection, math
+        and table recognition, image and video understanding, and full
+        note-taking with rich playback controls.
       </p>
 
       <div style={styles.gallery}>
@@ -111,6 +136,20 @@ const styles = {
     fontFamily: "var(--font-mono)",
     fontSize: "0.75rem",
     color: "var(--accent)",
+  },
+  domains: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "0.5rem",
+    marginBottom: "1rem",
+  },
+  domainTag: {
+    fontFamily: "var(--font-mono)",
+    fontSize: "0.7rem",
+    color: "var(--text-muted)",
+    border: "1px solid var(--border)",
+    borderRadius: "6px",
+    padding: "0.25rem 0.55rem",
   },
   badge: {
     fontFamily: "var(--font-mono)",
