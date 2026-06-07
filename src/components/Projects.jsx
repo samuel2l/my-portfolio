@@ -9,6 +9,10 @@ const README_ACCEPT = "application/vnd.github.raw";
 // Pinned repo names (order preserved) + BTC project
 const PINNED_NAMES = [
   "Social-Media-Chat-App",
+  "Voice-Bot",
+  "sankofachain",
+  "Reddit-Clone",
+  "Amazon-Clone",
   "Gesture-Detector",
   "MultiVendorPlatform-Mobile-Application",
   "Instagram-Clone",
